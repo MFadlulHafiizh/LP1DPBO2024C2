@@ -11,19 +11,14 @@ class Dpr{
         string nama_partai;
 
     public:
-        //construct
+        //constructor sebagai nilai default saat instansiasi
         Dpr(){
             this->nama = "-";
             this->nama_bidang = "-";
             this->nama_partai = "-";
         }
-    
-        Dpr(string nama, string nama_bidang, string nama_partai){
-            this->nama = nama;
-            this->nama_bidang = nama_bidang;
-            this->nama_partai = nama_partai;
-        }
 
+        //enkapsulasi semua atribut
         int getId()
         {
             return this->id;
@@ -64,8 +59,7 @@ class Dpr{
             this->nama_partai = nama_partai;
         }
 
-        
-
+        // destructor
         ~Dpr(){}
         
 };
