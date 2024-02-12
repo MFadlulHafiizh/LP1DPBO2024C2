@@ -1,29 +1,32 @@
+<!-- Saya Muhammad Muhammad Fadlul Hafiizh [2209889] mengerjakan soal latprak_1 dalam mata kuliah DPBO.
+untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan, Aamiin -->
+
 <?php
 include "Controller/DprController.php";
-session_start();
+session_start(); //mulai session untuk menampung list dari objek Dpr supaya list bisa diakses secara global
 if(!$_SESSION['dprList']){
     $_SESSION['dprList'] = [];
 }
 $controller = new DprController;
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(isset($_POST["add"])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){ //bila ada kiriman dengan method post dari form
+    if(isset($_POST["add"])){ //bila name dari apa yang di post kan itu add
         $request = [
             "nama" => $_POST["nama"],
             "bidang" => $_POST["bidang"],
             "partai" => $_POST["partai"],
-        ];
-        if(!empty($_FILES['foto']['name'])){
-            if(move_uploaded_file($_FILES['foto']['tmp_name'], 'storage/'.$_FILES['foto']['name'])){
-                $request['foto'] = 'storage/'.$_FILES['foto']['name'];
+        ];//masukan semua kiriman dari form kedalam variable request sebagai parameter ke controller nantinya
+        if(!empty($_FILES['foto']['name'])){ //bila ada request foto
+            if(move_uploaded_file($_FILES['foto']['tmp_name'], 'storage/'.$_FILES['foto']['name'])){ //masukan foto kedalam storage path
+                $request['foto'] = 'storage/'.$_FILES['foto']['name']; //lalu masukan path file kedalam request
             }
         }
     
-        $controller->storeDpr($request);
-    }else if(isset($_POST['delete'])){
+        $controller->storeDpr($request); //arahkan semua data yang disimpan pada request kedalam fungsi store di controller
+    }else if(isset($_POST['delete'])){//bila name dari apa yang di post kan itu delete
         $request['id'] = $_POST['id'];
 
         $controller->deleteDpr($request);
-    }else if(isset($_POST['update'])){
+    }else if(isset($_POST['update'])){//bila name dari apa yang di post kan itu update
         $request = [
             "id" => $_POST['id'],
             "nama" => $_POST["nama"],
@@ -99,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </thead>
                 <tbody>
                     <?php
-                        if(count($_SESSION['dprList']) > 0){
+                        if(count($_SESSION['dprList']) > 0){ //cek dulu apakah ada data pada list?
                             foreach ($_SESSION['dprList'] as $key => $value) { ?>
                                 <tr>
                                     <td><?= $key+1 ?></td>
@@ -153,6 +156,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     </td>
                                 </tr>
                             <?php } ?>
+                            <!-- bila tidak ada data pada list maka tambilkan row sebagai informasi belum ada data -->
                         <?php } else{ ?>
                             <tr>
                                 <td colspan="6" class="text-center">Data belum tersedia</td>
