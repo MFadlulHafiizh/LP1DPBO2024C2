@@ -1,5 +1,21 @@
 # LP1DPBO2024C2
-## Dokumentasi Latprak 1 program CPP
+## Dokumentasi Latprak 1 program
+## PHP
+
+https://github.com/MFadlulHafiizh/LP1DPBO2024C2/assets/61264072/7ef2f1cc-dd4a-4545-a46a-11faa65398ad
+
+## JAVA
+
+
+https://github.com/MFadlulHafiizh/LP1DPBO2024C2/assets/61264072/17c87e90-2273-4ff5-838c-282f2f2dbe6e
+
+## PYTHON
+
+
+https://github.com/MFadlulHafiizh/LP1DPBO2024C2/assets/61264072/abfbbc43-0c36-4b62-b707-6da963065437
+
+
+## CPP
 
 Untuk memulai program saat pertamakali akan disuruh untuk melakukan input data dpr terlebih dahulu dengan contoh format inputan sebagai berikut:
 > ! integer jumlah anggota DPR yang ingin diinputkan
