@@ -1,4 +1,4 @@
-/*Saya Muhammad Muhammad Fadlul Hafiizh [2209889] mengerjakan soal latprak_ dalam mata kuliah DPBO.
+/*Saya Muhammad Muhammad Fadlul Hafiizh [2209889] mengerjakan soal latprak_1 dalam mata kuliah DPBO.
 untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan, Aamiin */
 
 package models;
